@@ -4,7 +4,8 @@ import "./CustomerService.css";
 import { StoreContext } from "../../context/StoreContextProvider";
 import CustomerServiceRoom from "../CustomerServiceRoom/CustomerServiceRoom"
 
-const API_URL = "http://localhost:4000/api/message";
+const API_URL = (process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/message";
+
 
 const faqs = [
   { q: "Bagaimana cara memesan makanan?", a: "Pilih makanan, tambahkan ke keranjang, lalu lakukan checkout. Ikuti instruksi pembayaran hingga selesai." },

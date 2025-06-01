@@ -3,7 +3,8 @@ import axios from "axios";
 import { StoreContext } from "../../context/StoreContextProvider";
 import "./CustomerServiceRoom.css";
 
-const API_URL = "http://localhost:4000/api/message";
+const API_URL = (process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/message";
+
 
 const CustomerServiceRoom = () => {
   const { user } = useContext(StoreContext);

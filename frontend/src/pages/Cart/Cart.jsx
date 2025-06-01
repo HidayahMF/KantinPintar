@@ -35,7 +35,8 @@ const Cart = () => {
                   <div className="cart-item-image-container">
                     {item.image ? (
                       <img
-                        src={`http://localhost:4000/uploads/${item.image}`}
+                        src={`${process.env.REACT_APP_API_URL || "http://localhost:4000"}/uploads/${item.image}`}
+
                         alt={item.name}
                         className="cart-item-image"
                         style={{

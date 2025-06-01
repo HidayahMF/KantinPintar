@@ -3,7 +3,8 @@ import "./CustomerServiceAdmin.css";
 import axios from "axios";
 import CustomerServiceAdminRoom from "../CustomerServiceAdminRoom/CustomerServiceAdminRoom";
 
-const API_URL = "http://localhost:4000/api/message";
+const API_URL = (process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/message";
+
 const ROOMS_PER_PAGE = 5;
 
 const CustomerServiceAdmin = () => {

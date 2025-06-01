@@ -8,7 +8,8 @@ const CATEGORIES_PER_PAGE = 5;
 
 const ListCategory = ({ token: tokenProp, onCategoriesChange }) => {
   const { url: urlContext, token: tokenContext } = useContext(StoreContext);
-  const url = urlContext || "http://localhost:4000";
+const url = process.env.REACT_APP_API_URL || urlContext || "http://localhost:4000";
+
   const token = tokenProp || tokenContext;
 
   const [activeTab, setActiveTab] = useState("list");

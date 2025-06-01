@@ -86,7 +86,8 @@ const DescReview = () => {
       <div className="desc-review-content">
         <img
           className="desc-review-img"
-          src={`http://localhost:4000/uploads/${food.image}`}
+          src={`${process.env.REACT_APP_API_URL || "http://localhost:4000"}/uploads/${food.image}`}
+
           alt={food.name}
           onError={(e) => {
             e.target.onerror = null;

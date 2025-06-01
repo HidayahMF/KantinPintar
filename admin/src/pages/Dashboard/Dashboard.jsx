@@ -14,7 +14,8 @@ import {
   Bar,
 } from "recharts";
 
-const BACKEND_URL = "http://localhost:4000";
+const BACKEND_URL = process.env.REACT_APP_API_URL || "http://localhost:4000";
+
 const ROWS_PER_PAGE = 5;
 
 const Dashboard = () => {

@@ -90,7 +90,6 @@ const LoginPopup = ({ setShowLogin }) => {
 
   return (
     <div className="login-popup">
-   
       {notif && (
         <div className={`notif-popup notif-${notif.type}`}>{notif.msg}</div>
       )}

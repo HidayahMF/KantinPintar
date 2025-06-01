@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import "./CustomerServiceAdminRoom.css";
 
-const API_URL = "http://localhost:4000/api/message";
+const API_URL = (process.env.REACT_APP_API_URL || "http://localhost:4000") + "/api/message";
+
 
 const CustomerServiceAdminRoom = ({ email, onClose, onStatusChange }) => {
   const [messages, setMessages] = useState([]);

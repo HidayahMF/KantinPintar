@@ -13,7 +13,8 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import CustomerServiceAdmin from "./pages/CustomerServiceAdmin/CustomerServiceAdmin";
 
 const App = () => {
-  const url = "http://localhost:4000";
+  const url = process.env.REACT_APP_API_URL || "http://localhost:4000";
+
 
   return (
     <div className="app">
