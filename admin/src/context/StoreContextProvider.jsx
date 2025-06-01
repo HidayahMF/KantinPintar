@@ -16,7 +16,7 @@ const StoreContextProvider = ({ children }) => {
     return stored ? JSON.parse(stored) : {};
   });
 
-  const url = "http://localhost:4000";
+  const url = process.env.REACT_APP_API_URL || "http://localhost:4000";
 
   // --- 1. Ambil token, isAdmin dari localStorage atau URL sekali di awal
   useEffect(() => {

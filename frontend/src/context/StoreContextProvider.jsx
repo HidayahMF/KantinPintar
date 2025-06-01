@@ -16,7 +16,7 @@ const StoreContextProvider = ({ children }) => {
     return stored ? JSON.parse(stored) : {};
   });
 
-  const url = "http://localhost:4000";
+  const url = process.env.REACT_APP_API_URL || "http://localhost:4000";
 
   // Ambil token dari localStorage/URL
   useEffect(() => {
@@ -65,7 +65,10 @@ const StoreContextProvider = ({ children }) => {
         const data = await res.json();
         if (data.success && data.user) {
           setIsAdmin(data.user?.isAdmin === true);
-          localStorage.setItem("isAdmin", data.user?.isAdmin === true ? "true" : "false");
+          localStorage.setItem(
+            "isAdmin",
+            data.user?.isAdmin === true ? "true" : "false"
+          );
           setUser(data.user);
         } else {
           setIsAdmin(false);
