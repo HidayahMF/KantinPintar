@@ -15,9 +15,9 @@ import CustomerService from "./components/CustomerService/CustomerService";
 import DescReview from "./pages/DescReview/DescReview";
 import ErrorBoundary from "./ErrorBoundary";
 
-
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
+  console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
 
   return (
     <>
